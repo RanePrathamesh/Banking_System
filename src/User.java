@@ -25,7 +25,7 @@ public class User {
         System.out.println("password: ");
         String password = scanner.nextLine();
 
-        if (userexist(email)) {
+        if (user_exist(email)) {
             System.out.println("already exixt");
             return;
         }
@@ -81,7 +81,7 @@ public class User {
         return null ;
     }
 
-    public boolean userexist(String email) {
+    public boolean user_exist(String email) {
         String querry = "SELECT * FROM user WHERE email = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(querry);
